@@ -18,11 +18,10 @@ export default async function Home() {
           />
         </div>
       </section>
-      {/* ここからコンテンツ（画像の上に表示させる） */}
-      <section>
+      {/* ここからコンテンツ*/}
+      <main>
         <h2>最新の日記</h2>
-        {/* <getDiaryesList diary={data.contents} /> */}
-      </section>
+      </main>
     </>
   );
 }

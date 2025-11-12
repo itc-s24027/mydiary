@@ -26,10 +26,18 @@ export default function DiaryList({ diarys, showOnlyTitleAndImage = false }: Pro
             <li key={diary.id} style={{ marginBottom: "2rem", width: "300px" }}>
               <Link href={`/diary/${diary.id}`}>
                 {/* 最初の画像1枚だけ表示 */}
-                {diary.image && diary.image.length > 0 && (
+                {diary.image && diary.image.length > 0 ? (
                   <Image
                     src={diary.image[0].url}
                     alt={diary.title || "Diary Image"}
+                    width={300}
+                    height={300}
+                    style={{ borderRadius: "8px", objectFit: "cover" }}
+                  />
+                ) : (
+                  <Image
+                    src="/images/next.js課題noimage画像.png"
+                    alt="No Image"
                     width={300}
                     height={300}
                     style={{ borderRadius: "8px", objectFit: "cover" }}
