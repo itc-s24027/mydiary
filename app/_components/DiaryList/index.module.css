@@ -1,0 +1,83 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 40px;
+}
+
+.articleCard {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  max-width: 900px;
+}
+
+.articleCard li {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  background-color: #fff;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.articleCard li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.articleCard img {
+  border-radius: 12px;
+  object-fit: cover;
+  width: 300px;
+  height: 200px;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.textContainer h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.textContainer p {
+  margin: 0;
+  color: #777;
+  font-size: 1rem;
+}
+
+.articleCard a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .articleCard li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .articleCard img {
+    width: 30%;
+    height: auto;
+  }
+}

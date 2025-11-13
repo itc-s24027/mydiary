@@ -10,7 +10,7 @@ export default async function Page() {
     <div>
       <h1>日記一覧</h1>
       <DiaryList diarys={data.contents} />
-      <ButtonLink href="/">ホームに戻る</ButtonLink>
+      <ButtonLink href="/">Hame</ButtonLink>
     </div>
   );
 }

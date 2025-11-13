@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import styles from "./index.module.css";
 import { Diary } from "@/app/_libs/microcms";
 
 type Props = {
@@ -8,50 +9,39 @@ type Props = {
 };
 
 export default function DiaryList({ diarys, showOnlyTitleAndImage = false }: Props) {
+    if (diarys.length === 0) {
+      return <p>日記の投稿がありません</p>;
+    }
   return (
-    <div>
-      {diarys.length === 0 ? (
-        <p>日記の投稿がありません</p>
-      ) : (
-        <ul
-          style={{
-            listStyle: "none",
-            padding: 0,
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "20px",
-          }}
-        >
-          {diarys.map((diary) => (
-            <li key={diary.id} style={{ marginBottom: "2rem", width: "300px" }}>
-              <Link href={`/diary/${diary.id}`}>
-                {/* 最初の画像1枚だけ表示 */}
-                {diary.image && diary.image.length > 0 ? (
-                  <Image
-                    src={diary.image[0].url}
-                    alt={diary.title || "Diary Image"}
-                    width={300}
-                    height={300}
-                    style={{ borderRadius: "8px", objectFit: "cover" }}
-                  />
-                ) : (
-                  <Image
-                    src="/images/next.js課題noimage画像.png"
-                    alt="No Image"
-                    width={300}
-                    height={300}
-                    style={{ borderRadius: "8px", objectFit: "cover" }}
-                  />
-                )}
-
-                <h3 style={{ marginTop: "0.5rem" }}>{diary.title}</h3>
-
+    <div className={styles.container}>
+      <ul className={styles.articleCard}>
+        {diarys.map((diary) => (
+          <li key={diary.id}>
+            <Link href={`/diary/${diary.id}`}>
+              {/* 最初の画像1枚だけ表示 */}
+              {diary.image && diary.image.length > 0 ? (
+                <Image
+                  src={diary.image[0].url}
+                  alt={diary.title || "Diary Image"}
+                  width={300}
+                  height={300}
+                />
+              ) : (
+                <Image
+                  src="/images/next.js課題noimage画像.png"
+                  alt="No Image"
+                  width={300}
+                  height={300}
+                />
+              )}
+              <div className={styles.texitContainer}>
+                <h3>{diary.title}</h3>
                 <p>{new Date(diary.date).toLocaleDateString()}</p>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      )}
+              </div>
+            </Link>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
