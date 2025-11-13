@@ -1,1 +1,42 @@
+.header {
+    background-color: rgba(255, 255, 255, 0.487);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+}
 
+.headernav {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 50px;
+}
+
+.navList {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+}
+
+.logoLink {
+    margin-left: 20px;
+}
+
+.logo {
+  height: 100px;
+  width: auto;
+}
+
+@media (max-width: 640px) {
+  .header {
+    padding: 24px 16px 8px;
+  }
+
+  .logoLink {
+    margin-left: 0;
+}
+
+.logo {
+    height: 70px;
+}
+}
