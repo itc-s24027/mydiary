@@ -1,3 +1,4 @@
+import styles from './index.module.css';
 
 type Props = {
     href: string;
@@ -6,7 +7,7 @@ type Props = {
 
 export default function ButtonLink({ href, children }: Props) {
     return (
-        <a href={href}>
+        <a href={href} className={styles.button}>
             {children}
         </a>
     );
