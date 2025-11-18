@@ -1,3 +1,5 @@
+// ホームページ
+// 最新の日記2件を表示
 import Image from "next/image";
 import styles from "./page.module.css";
 import DiaryList from "./_components/DiaryList";
@@ -12,7 +14,7 @@ export default async function Home() {
       {/*コンテンツ*/}
       <main>
         <div>
-          <h1 className={styles.h1title}>~ New Diary ~</h1>
+          <h1 className={styles.fukidashi}> New Diary </h1>
           <DiaryList diarys={data.contents} />
           <ButtonLink href="/diary">VIEW MORE</ButtonLink>
         </div>

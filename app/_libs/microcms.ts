@@ -6,6 +6,7 @@ import type {
   MicroCMSListContent,
 } from "microcms-js-sdk";
 
+// 日記データの型定義
 export type Diary = {
   id: string;
   title: string;
@@ -27,15 +28,17 @@ const client = createClient({
   apiKey: process.env.MICROCMS_API_KEY,
 });
 
+// 日記の一覧を取得する
 export const getDiaryesList = async (queries?: MicroCMSQueries) => {
   const listData = await client.getList<Diary>({
     endpoint: "diary",
-    queries: queries,
+    queries: queries, //queriesを渡すとフィルタリングできる
   });
   return listData;
 };
 
 
+// 日記の詳細を取得する
 export const getDiaryDetail = async (
   contentId: string,
   queries?: MicroCMSQueries

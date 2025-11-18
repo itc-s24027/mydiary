@@ -1,6 +1,9 @@
+// 詳細ページコンポーネント
+// [id]/page.tsx から渡されたデータを表示
 import Image from "next/image";
 import { Diary } from "@/app/_libs/microcms";
 
+// 渡されたデータがDiary型であることを示す
 type Props = {
   data: Diary;
 };

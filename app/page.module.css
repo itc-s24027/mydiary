@@ -1,34 +1,21 @@
-.h1title {
+.fukidashi {
   position: relative;
-  padding: 8px;
-  border-top: solid 1px #333;
-  border-bottom: solid 1px #333;
-  font-family: 'Noto Serif JP', serif;
-  font-size: 24px;
-  letter-spacing: 0.1em;
-  color: #333;
-  font-weight: 400;
   display: block;
-  box-sizing: border-box;
-  max-width: 400px;
-  text-align: center; 
-  margin: 50px;
+  padding: 8px 32px;
+  border: solid 1px #333;
+  transform: skewX(-25deg);
+  margin: 48px;
   margin-inline: auto;
+  width: fit-content;
 }
 
-.h1title::before, .h1title::after {
-  content: '';
-  position: absolute;
-  top: -8px;
-  width: 1px;
-  height: calc(100% + 16px);
-  background: #333;
-}
-
-.h1title::before {
-  left: 8px;
-}
-
-.h1title::after {
-  right: 8px;
+.fukidashi::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 30%;
+    height: 28px;
+    width: 28px;
+    border-right: 1px solid #333;
+    transform: rotate(40deg);
 }
