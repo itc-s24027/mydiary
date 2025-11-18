@@ -6,18 +6,6 @@
     height: 100px;
 }
 
-.headernav {
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 50px;
-}
-
-.navList {
-    display: flex;
-    gap: 24px;
-    list-style: none;
-}
-
 .logoLink {
     margin-left: 20px;
 }

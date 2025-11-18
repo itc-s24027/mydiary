@@ -1,0 +1,59 @@
+.items {
+    font-size: 20px;
+    display: flex;
+    margin-right: 50px;
+    gap: 40px;
+    list-style: none;
+}
+
+.button {
+    display: none;
+}
+
+@media (max-width: 640px) {
+    .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 70vw;
+        background-color: #97b49b;
+        padding: 24px 16px;
+        z-index: 9999;
+
+        /* 最初は画面外に隠す */
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+
+        /* displayは常に表示（非表示はtransformで対応） */
+        display: block;
+        visibility: hidden;       /* 非表示 */
+        pointer-events: none;
+        
+    }
+
+  .nav.open {
+        transform: translateX(0);
+        visibility: visible;
+        pointer-events: auto;
+  }
+
+    .items {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .button {
+        display: flex;
+        background: none;
+        border: none;
+        cursor: pointer; 
+    }
+
+    .close {
+        position: absolute;
+        top: 24px;
+        right: 16px;
+    }
+
+}
