@@ -1,7 +1,7 @@
 // 一覧ページ
-import { getDiaryesList } from "../_libs/microcms";
-import ButtonLink from "../_components/ButtonLink";
-import DiaryList from "../_components/DiaryList";
+import { getDiaryesList } from "@/app/_libs/microcms";
+import ButtonLink from "@/app/_components/ButtonLink";
+import DiaryList from "@/app/_components/DiaryList";
 
 export default async function Page() {
   const data = await getDiaryesList();

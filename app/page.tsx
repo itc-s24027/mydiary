@@ -2,10 +2,11 @@
 // 最新の日記2件を表示
 import Image from "next/image";
 import styles from "./page.module.css";
-import DiaryList from "./_components/DiaryList";
-import { getDiaryesList } from "./_libs/microcms";
-import { TOP_DIARY_LIMIT } from "./_constants";
-import ButtonLink from "./_components/ButtonLink";
+import DiaryList from "@/app/_components/DiaryList";
+import { getDiaryesList } from "@/app/_libs/microcms";
+import { TOP_DIARY_LIMIT } from "@/app/_constants";
+import ButtonLink from "@/app/_components/ButtonLink";
+import SearchField from "@/app/_components/SearchField";
 
 export default async function Home() {
   const data = await getDiaryesList({ limit: TOP_DIARY_LIMIT });
@@ -14,7 +15,10 @@ export default async function Home() {
       {/*コンテンツ*/}
       <main>
         <div>
-          <h1 className={styles.fukidashi}> New Diary </h1>
+          <div className={styles.title}>
+            <h2 className={styles.fukidashi}> New Diary </h2>
+            <SearchField />
+          </div>
           <DiaryList diarys={data.contents} />
           <ButtonLink href="/diary">VIEW MORE</ButtonLink>
         </div>
