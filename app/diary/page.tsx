@@ -2,6 +2,7 @@
 import { getDiaryesList } from "@/app/_libs/microcms";
 import ButtonLink from "@/app/_components/ButtonLink";
 import DiaryList from "@/app/_components/DiaryList";
+import SearchField from "@/app/_components/SearchField";
 
 export default async function Page() {
   const data = await getDiaryesList();
@@ -9,6 +10,7 @@ export default async function Page() {
 
   return (
     <div>
+      <SearchField />
       <DiaryList diarys={data.contents} />
       <ButtonLink href="/">Hame</ButtonLink>
     </div>
