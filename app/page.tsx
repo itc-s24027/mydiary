@@ -6,7 +6,6 @@ import DiaryList from "@/app/_components/DiaryList";
 import { getDiaryesList } from "@/app/_libs/microcms";
 import { TOP_DIARY_LIMIT } from "@/app/_constants";
 import ButtonLink from "@/app/_components/ButtonLink";
-import SearchField from "@/app/_components/SearchField";
 
 export default async function Home() {
   const data = await getDiaryesList({ limit: TOP_DIARY_LIMIT });
@@ -17,7 +16,6 @@ export default async function Home() {
         <div>
           <div className={styles.title}>
             <h2 className={styles.fukidashi}> New Diary </h2>
-            <SearchField />
           </div>
           <DiaryList diarys={data.contents} />
           <ButtonLink href="/diary">VIEW MORE</ButtonLink>

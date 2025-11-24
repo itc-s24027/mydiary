@@ -5,6 +5,7 @@ import Image from 'next/image';
 import {useState} from 'react';
 import cx from 'classnames';
 import styles from './index.module.css';
+import SearchField from "../SearchField";
 
 export default function Menu() {
     const [isOpen, setOpen] = useState<boolean>(false);
@@ -14,6 +15,9 @@ export default function Menu() {
       <div>
         <nav className={cx(styles.nav, isOpen && styles.open)}>
           <ul className={styles.items}>
+            <li>
+              <SearchField />
+            </li>
             <li className={styles.text}>
               <Link href="/" onClick={close}>
                 Home

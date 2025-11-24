@@ -6,12 +6,17 @@ import type {
   MicroCMSListContent,
 } from "microcms-js-sdk";
 
+export type Category = {
+  name: string;
+} & MicroCMSListContent;
+
 // 日記データの型定義
 export type Diary = {
   id: string;
   title: string;
   content: string;
   date: string;
+  category: Category;
   image?: MicroCMSImage[];
 };
 

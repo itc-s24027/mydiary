@@ -1,7 +1,6 @@
 import { getDiaryesList } from "@/app/_libs/microcms";
 import { TOP_DIARY_LIMIT } from "@/app/_constants";
 import DiaryList from "@/app/_components/DiaryList";
-import SearchField from "@/app/_components/SearchField";
 
 type Props = {
     searchParams: {
@@ -17,7 +16,6 @@ export default async function Page({ searchParams }: Props) {
 
     return (
         <>
-            <SearchField />
             <DiaryList diarys={diary} />
         </>
     );

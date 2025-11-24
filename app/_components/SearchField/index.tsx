@@ -27,8 +27,8 @@ function SearchFieldComponent() {
                 <Image
                     src="/images/search.svg"
                     alt="検索"
-                    width={16}
-                    height={16}
+                    width={18}
+                    height={18}
                     loading="eager"
                 />
                 <input

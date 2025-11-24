@@ -1,6 +1,7 @@
 // 詳細ページコンポーネント
 // [id]/page.tsx から渡されたデータを表示
 import Image from "next/image";
+import Carousel from "../Carousel";
 import { Diary } from "@/app/_libs/microcms";
 
 // 渡されたデータがDiary型であることを示す
@@ -13,23 +14,13 @@ export default function Article({ data }: Props) {
     <main>
       <h1>{data.title}</h1>
       {data.image && data.image.length > 0 ? (
-        data.image.map((img, index) => (
-          <Image
-            key={index}
-            src={img.url}
-            alt={data.title || "Diary Image"}
-            width={300}
-            height={300}
-            style={{ borderRadius: "8px", objectFit: "cover" }}
-          />
-        ))
+        <Carousel images={data.image} />
       ) : (
-        // 画像がなければNo Image画像を表示
         <Image
           src="/images/next.js課題noimage画像.png"
           alt="No Image"
-          width={300}
-          height={300}
+          width={600}
+          height={600}
           style={{ borderRadius: "8px", objectFit: "cover" }}
         />
       )}

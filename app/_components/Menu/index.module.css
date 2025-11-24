@@ -1,6 +1,7 @@
 .items {
     font-size: 20px;
     display: flex;
+    margin-top: 15px;
     margin-right: 50px;
     gap: 40px;
     list-style: none;
@@ -27,7 +28,7 @@
 
         /* displayは常に表示（非表示はtransformで対応） */
         display: block;
-        visibility: hidden;       /* 非表示 */
+        visibility: hidden;
         pointer-events: none;
         
     }

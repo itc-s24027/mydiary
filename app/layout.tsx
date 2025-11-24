@@ -1,5 +1,6 @@
-import './globals.css';
-import Image from 'next/image';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./globals.css";
+import BootstrapClient from "./_components/BootstrapClient";
 import Header from "./_components/Header";
 import Footer from "./_components/Footer";
 
@@ -12,6 +13,7 @@ export default function RootLayout({
     <>
       <html lang="ja">
         <body>
+          <BootstrapClient />
           <Header />
           {children}
           <Footer />

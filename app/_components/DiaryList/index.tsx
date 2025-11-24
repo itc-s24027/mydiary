@@ -15,7 +15,7 @@ export default function DiaryList({ diarys, showOnlyTitleAndImage = false }: Pro
     }
   return (
     <div className={styles.container}>
-      <ul className={styles.articleCard}>
+      <ul className={styles.board}>
         {diarys.map((diary) => (
           <li key={diary.id}>
             <Link href={`/diary/${diary.id}`}>
@@ -38,6 +38,7 @@ export default function DiaryList({ diarys, showOnlyTitleAndImage = false }: Pro
               <div className={styles.texitContainer}>
                 <h3>{diary.title}</h3>
                 <p>{new Date(diary.date).toLocaleDateString()}</p>
+                <p className={styles.category}>{diary.category.name}</p>
               </div>
             </Link>
           </li>
