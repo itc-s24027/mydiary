@@ -1,56 +1,51 @@
-import Image from "next/image";
+// "use client";
 
-type Props = {
-  images: { url: string }[];
-};
+// import Image from "next/image";
+// import { useState } from "react";
+// import styles from "./index.module.css";
 
-export default function Carousel({ images }: Props) {
-  return (
-    <div
-      id="carouselExampleInterval"
-      className="carousel slide"
-      data-bs-ride="carousel"
-      style={{ maxWidth: "600px", margin: "0 auto" }} // ★ サイズ縮小
-    >
-      <div className="carousel-inner">
-        {images.map((img, index) => (
-          <div
-            key={index}
-            className={`carousel-item ${index === 0 ? "active" : ""}`}
-            data-bs-interval="4000"
-          >
-            <Image
-              src={img.url}
-              className="d-block w-100"
-              alt="Diary Image"
-              width={500}
-              height={550}
-            />
-          </div>
-        ))}
-      </div>
+// type Props = {
+//   images: { url: string }[];
+// };
 
-      {/* 前へボタン */}
-      <button
-        className="carousel-control-prev"
-        type="button"
-        data-bs-target="#carouselExampleInterval"
-        data-bs-slide="prev"
-      >
-        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span className="visually-hidden">Previous</span>
-      </button>
+// export default function Carousel({ images }: Props) {
+//   const [current, setCurrent] = useState(0);
 
-      {/* 次へボタン */}
-      <button
-        className="carousel-control-next"
-        type="button"
-        data-bs-target="#carouselExampleInterval"
-        data-bs-slide="next"
-      >
-        <span className="carousel-control-next-icon" aria-hidden="true"></span>
-        <span className="visually-hidden">Next</span>
-      </button>
-    </div>
-  );
-}
+//   const next = () => {
+//     setCurrent((prev) => (prev + 1) % images.length);
+//   };
+
+//   const prev = () => {
+//     setCurrent((prev) => (prev - 1 + images.length) % images.length);
+//   };
+
+//   return (
+//     <div className={styles.carousel}>
+//       <div
+//         className={styles.inner}
+//         style={{ transform: `translateX(-${current * 100}%)` }}
+//       >
+//         {images.map((img, i) => (
+//           <div className={styles.item} key={i}>
+//             <Image
+//               src={img.url}
+//               alt="image"
+//               fill
+//               style={{ objectFit: "cover" }}
+//             />
+//           </div>
+//         ))}
+//       </div>
+
+//       {/* 前へ */}
+//       <button className={styles.prevBtn} onClick={prev}>
+//         ‹
+//       </button>
+
+//       {/* 次へ */}
+//       <button className={styles.nextBtn} onClick={next}>
+//         ›
+//       </button>
+//     </div>
+//   );
+// }

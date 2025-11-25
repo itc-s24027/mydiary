@@ -1,0 +1,52 @@
+/* タイトル */
+.title {
+  font-size: 2rem;
+  text-align: center;
+  padding-bottom: 0.6em;
+  border-bottom: 6px dotted #a9a9a9;
+  margin: 20px auto 30px;
+  max-width: 800px;
+}
+
+/* 全体のブロック */
+.datecontent {
+  font-size: 1.2rem;
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* 画像を制御するコンテナ */
+.imageContainer {
+  position: relative;
+  width: 100%;
+  max-width: 600px;    /* ← これで大きくなりすぎない */
+  aspect-ratio: 4/3;   /* ← 高さの比率を決める（好きに変更可） */
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 画像のスタイル */
+.detailImage {
+  object-fit: cover;
+}
+
+/* カテゴリーボタン（中央寄せ） */
+.datecontent a {
+  align-self: flex-start;
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .datecontent {
+    padding: 0 10px;
+  }
+}
