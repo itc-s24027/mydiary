@@ -5,7 +5,7 @@ import Image from 'next/image';
 import {useState} from 'react';
 import cx from 'classnames';
 import styles from './index.module.css';
-import SearchField from "../SearchField";
+import SearchField from "@/app/_components/SearchField";
 
 export default function Menu() {
     const [isOpen, setOpen] = useState<boolean>(false);

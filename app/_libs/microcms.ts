@@ -55,3 +55,10 @@ export const getDiaryDetail = async (
   });
   return detailData;
 };
+
+// カテゴリ全件を取得する
+export const getCategoryList = async () => {
+  return await client.getList({
+    endpoint: "categories",
+  });
+};

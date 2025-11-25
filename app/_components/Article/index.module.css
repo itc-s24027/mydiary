@@ -1,0 +1,15 @@
+.title {
+    font-size: 2rem;
+    text-align: center;
+    padding: 10px;
+    padding: 0.6em;
+    border-bottom: 6px dotted #a9a9a9;
+    margin: 20px;
+}
+
+.datecontent {
+    font-size: 1.2rem;
+    margin: 20px;
+    padding: 0 60px;
+    gap: 20px;
+}
