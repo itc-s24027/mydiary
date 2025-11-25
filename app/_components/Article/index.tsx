@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./index.module.css";
 // import Carousel from "@/app/_components/Carousel";
+
 import Category from "@/app/_components/CategoryButton";
 import { Diary } from "@/app/_libs/microcms";
 

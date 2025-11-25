@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./index.module.css";
+import Category from "@/app/_components/CategoryButton";
 import { Diary } from "@/app/_libs/microcms";
 
 type Props = {
@@ -9,10 +10,13 @@ type Props = {
   showOnlyTitleAndImage?: boolean;
 };
 
-export default function DiaryList({ diarys, showOnlyTitleAndImage = false }: Props) {
-    if (diarys.length === 0) {
-      return <p>日記の投稿がありません</p>;
-    }
+export default function DiaryList({
+  diarys,
+  showOnlyTitleAndImage = false,
+}: Props) {
+  if (diarys.length === 0) {
+    return <p>日記の投稿がありません</p>;
+  }
   return (
     <div className={styles.container}>
       <ul className={styles.board}>
@@ -38,7 +42,9 @@ export default function DiaryList({ diarys, showOnlyTitleAndImage = false }: Pro
               <div className={styles.texitContainer}>
                 <h3>{diary.title}</h3>
                 <p>{new Date(diary.date).toLocaleDateString()}</p>
-                <p className={styles.category}>{diary.category.name}</p>
+                <Link href={`/diary/category/${diary.category.id}`}>
+                  <Category category={diary.category} />
+                </Link>
               </div>
             </Link>
           </li>
