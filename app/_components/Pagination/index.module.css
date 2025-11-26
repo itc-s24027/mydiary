@@ -1,0 +1,58 @@
+.container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  padding: 10px 0;
+  user-select: none;
+}
+
+.list {
+  list-style: none;
+}
+
+.item,
+.current {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid #aaaaaa;
+  text-decoration: none;
+  user-select: none;
+}
+
+/* 通常のページ番号リンク */
+.item {
+  background-color: #fff;
+}
+
+.item:hover,
+.item:focus {
+  background-color: #a6a6a6;
+  color: #fff;
+  outline: none;
+}
+
+/* 現在のページ */
+.current {
+  background-color: var(--color-button-primary, #aaaaaa);
+  color: var(--color-text-unpainted, #fff);
+  cursor: default;
+  border-color: var(--color-button-primary, #ffffff);
+  pointer-events: none;
+}
+
+@media (max-width: 600px) {
+  .item,
+  .current {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+}
