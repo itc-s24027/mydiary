@@ -2,8 +2,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./index.module.css";
+import DiaryImage from "@/app/_components/DiaryImage";
 import Category from "@/app/_components/CategoryButton";
 import { Diary } from "@/app/_libs/microcms";
+import { formatDate } from "@/app/_libs/utils";
 
 type Props = {
   diarys: Diary[];
@@ -17,38 +19,39 @@ export default function DiaryList({
   if (diarys.length === 0) {
     return <p>日記の投稿がありません</p>;
   }
+
   return (
     <div className={styles.container}>
       <ul className={styles.board}>
-        {diarys.map((diary) => (
-          <li key={diary.id}>
-            <Link href={`/diary/${diary.id}`}>
-              {/* 最初の画像1枚だけ表示 */}
-              {diary.image && diary.image.length > 0 ? (
-                <Image
-                  src={diary.image[0].url}
-                  alt={diary.title || "Diary Image"}
-                  width={300}
-                  height={300}
-                />
-              ) : (
-                <Image
-                  src="/images/next.js課題noimage画像.png"
-                  alt="No Image"
-                  width={300}
-                  height={300}
-                />
-              )}
-              <div className={styles.texitContainer}>
-                <h3>{diary.title}</h3>
-                <p>{new Date(diary.date).toLocaleDateString()}</p>
-                <Link href={`/diary/category/${diary.category.id}`}>
-                  <Category category={diary.category} />
+        {diarys.map((diary) => {
+          // 日付は自前フォーマットで固定（環境差をなくす）
+          const d = new Date(diary.date);
+          const formattedDate = `${d.getFullYear()}-${String(
+            d.getMonth() + 1
+          ).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+
+          return (
+            <li key={diary.id}>
+              <article className={styles.card}>
+                <Link href={`/diary/${diary.id}`} className={styles.mainLink}>
+                  {diary.image && diary.image.length > 0 ? (
+                    <DiaryImage images={diary.image} />
+                  ) : (
+                    <DiaryImage />
+                  )}
+
+                  <div className={styles.textContainer}>
+                    <h3>{diary.title}</h3>
+                    <p>{formatDate(diary.date)}</p>
+                  </div>
                 </Link>
-              </div>
-            </Link>
-          </li>
-        ))}
+                <div className={styles.categoryWrapper}>
+                  <Category category={diary.category} />
+                </div>
+              </article>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

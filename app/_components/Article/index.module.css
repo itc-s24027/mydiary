@@ -21,14 +21,9 @@
 
 /* 画像を制御するコンテナ */
 .imageContainer {
-  position: relative;
   width: 100%;
-  max-width: 600px;    /* ← これで大きくなりすぎない */
-  aspect-ratio: 4/3;   /* ← 高さの比率を決める（好きに変更可） */
+  max-width: 600px;
   margin: 0 auto;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* 画像のスタイル */
@@ -36,10 +31,11 @@
   object-fit: cover;
 }
 
-/* カテゴリーボタン（中央寄せ） */
-.datecontent a {
-  align-self: flex-start;
+.textContainer {
+  line-height: 1.8;
+  margin: 0 auto;
 }
+
 
 @media (max-width: 600px) {
   .title {
@@ -49,4 +45,9 @@
   .datecontent {
     padding: 0 10px;
   }
+
+  .detailImage {
+  width: 100%;
+  height: auto;
+}
 }

@@ -16,14 +16,12 @@ export default async function Home() {
     <>
       {/*コンテンツ*/}
       <main>
-        <div>
           <div className={styles.title}>
             <h2 className={styles.fukidashi}> New Posts </h2>
           </div>
           <DiaryList diarys={data.contents} />
           <ButtonLink href="/diary">VIEW MORE</ButtonLink>
           <CategoryList categories={categories.contents} />
-        </div>
       </main>
     </>
   );

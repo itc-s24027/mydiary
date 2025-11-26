@@ -1,11 +1,9 @@
 // 詳細ページコンポーネント
 // [id]/page.tsx から渡されたデータを表示
-import Link from "next/link";
-import Image from "next/image";
-import styles from "./index.module.css";
-// import Carousel from "@/app/_components/Carousel";
-
+import styles from "./index.module.css"; 
 import Category from "@/app/_components/CategoryButton";
+import DiaryImage from "@/app/_components/DiaryImage";
+import { formatDate } from "@/app/_libs/utils";
 import { Diary } from "@/app/_libs/microcms";
 
 // 渡されたデータがDiary型であることを示す
@@ -17,34 +15,39 @@ export default function Article({ data }: Props) {
   return (
     <main>
       <h1 className={styles.title}>{data.title}</h1>
+
       <div className={styles.datecontent}>
+        {/* 画像がある場合 */}
         {data.image && data.image.length > 0 ? (
-          data.image.map((img, i) => (
-            <div key={i} className={styles.imageContainer}>
-              <Image
-                src={img.url}
-                alt={`image-${i}`}
-                fill
+          <div className={styles.imageContainer}>
+            {data.image.map((img, i) => (
+              <DiaryImage
+                key={i}
+                images={[img]}
+                width={600}
+                height={600}
                 className={styles.detailImage}
               />
-            </div>
-          ))
+            ))}
+          </div>
         ) : (
           <div className={styles.imageContainer}>
-            <Image
-              src="/images/next.js課題noimage画像.png"
-              alt="No Image"
-              fill
-              className={styles.detailImage}
-            />
-          </div>
+          { /* 画像がない場合 */ }
+          <DiaryImage
+            images={[{ url: "/images/next.js課題noimage画像.png" }]}
+            width={600}
+            height={600}
+            className={styles.detailImage}
+          />
+        </div>
         )}
 
-        <Link href={`/diary/category/${data.category.id}`}>
+
+        <div className={styles.textContainer}>
           <Category category={data.category} />
-        </Link>
-        <p>{new Date(data.date).toLocaleDateString()}</p>
-        <p>{data.content}</p>
+          <p>{formatDate(data.date)}</p>
+          <p>{data.content}</p>
+        </div>
       </div>
     </main>
   );
