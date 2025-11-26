@@ -1,4 +1,6 @@
 // ページネーション用ページ
+export const dynamic = "force-dynamic";
+
 import { notFound } from "next/navigation";
 import { getDiaryesList } from "@/app/_libs/microcms";
 import DiaryList from "@/app/_components/DiaryList";
