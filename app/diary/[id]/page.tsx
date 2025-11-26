@@ -27,7 +27,7 @@ export default async function Page({params, searchParams}: Props) {
           <Article data={data} />
         </div>
       </div>
-      <ButtonLink href="/diary">日記一覧に戻る</ButtonLink>
+      <ButtonLink href="/diary">一覧に戻る</ButtonLink>
     </>
   );
 }

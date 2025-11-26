@@ -1,0 +1,8 @@
+.title {
+  font-size: 2rem;
+  text-align: center;
+  padding-bottom: 0.6em;
+  border-bottom: 6px dotted #a9a9a9;
+  margin: 20px auto 30px;
+  max-width: 800px;
+}

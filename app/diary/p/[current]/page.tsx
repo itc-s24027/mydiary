@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getDiaryesList } from "@/app/_libs/microcms";
 import DiaryList from "@/app/_components/DiaryList";
 import Pagination from "@/app/_components/Pagination";
+import ButtonLink from "@/app/_components/ButtonLink";
 import { DIARY_LIST_LIMIT } from "@/app/_constants";
 
 type Props = {
@@ -29,10 +30,11 @@ export default async function Page({ params }: Props) {
         notFound();
     }
 
-    return ( 
-        <>
-    <DiaryList diarys={diarys} />
-    <Pagination totalCount={totalCount} current={current} />
-    </>
+    return (
+      <>
+        <DiaryList diarys={diarys} />
+        <ButtonLink href="/">Home</ButtonLink>
+        <Pagination totalCount={totalCount} current={current} />
+      </>
     );
 }

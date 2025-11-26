@@ -4,6 +4,7 @@ import Link from "next/link";
 import styles from "./index.module.css";
 import DiaryImage from "@/app/_components/DiaryImage";
 import Category from "@/app/_components/CategoryButton";
+import ButtonLink from "../ButtonLink";
 import { Diary } from "@/app/_libs/microcms";
 import { formatDate } from "@/app/_libs/utils";
 
@@ -17,7 +18,12 @@ export default function DiaryList({
   showOnlyTitleAndImage = false,
 }: Props) {
   if (diarys.length === 0) {
-    return <p>日記の投稿がありません</p>;
+    return (
+      <>
+    <p className={styles.noPosts}>日記の投稿がありません</p>
+    <ButtonLink href="/diary">日記一覧に戻る</ButtonLink>
+    </>
+  );
   }
 
   return (

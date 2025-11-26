@@ -37,26 +37,6 @@ h2.fukidashi {
  height: 98%;
 }
 
-/* .categorySection {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  padding: 50px;
-  margin: 60px 100px;
-  border: solid 2px #807373;
-  border-radius: 8px;
-}
-
-.categorySection .text {
-  position: absolute;
-  display: inline-block;
-  top: -13px; left: 10px;
-  padding:4px 15px;
-  background: #807373;
-  font-weight: bold;
-  color: #ffffff;
-} */
-
 @media (max-width: 800px) {
  .title {
    margin: 40px 50px;
