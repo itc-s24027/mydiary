@@ -65,7 +65,7 @@ microCMSで日記を管理できる日記閲覧サイトです。
 
 ```
 app/
-├── _components/       　　　　　 # 再利用可能なUIコンポーネント群
+├── _components/                 # 再利用可能なUIコンポーネント群
 │   ├── Article/
 │   ├── ButtonLink/
 │   ├── CategoryButton/
@@ -82,33 +82,34 @@ app/
 │   └── index.ts                 # 定数（表示件数など）
 │
 ├── _libs/
-│   ├── microcms.ts　　　　　　　# microCMS クライアント設定
-│   └── utils.ts　　　　　　　　 # 共通ユーティリティ
+│   ├── microcms.ts              # microCMS クライアント設定
+│   └── utils.ts                 # 共通ユーティリティ
 │
 ├── diary/
-│   ├── page.tsx        　　　　 # 日記一覧ページ
+│   ├── page.tsx                 # 日記一覧ページ
 │   ├── index.module.css
 │   ├── p/
 │   │   └── [current]/
-│   │       └── page.tsx　　　　# ページネーション
+│   │       └── page.tsx         # ページネーション
 │   ├── [id]/
 │   │   ├── page.module.css
-│   │   └── page.tsx　　　　　　# 詳細ページ
+│   │   └── page.tsx             # 詳細ページ
 │   ├── category/
-│   │   ├── page.tsx        　　# カテゴリー一覧ページ
+│   │   ├── page.tsx             # カテゴリー一覧ページ
 │   │   └── [id]/
 │   │       ├── page.module.css
-│   │       └── page.tsx　　　　# カテゴリー別日記一覧ページ
-│   └── search/         
-│       └── page.tsx　　　　　　 # 検索結果ページ
+│   │       └── page.tsx         # カテゴリー別日記一覧ページ
+│   └── search/
+│       └── page.tsx             # 検索結果ページ
 │
-├── layout.tsx          　　　　　# 全ページ共通レイアウト
-├── page.tsx            　　　　　# トップページ
+├── layout.tsx                   # 全ページ共通レイアウト
+├── page.tsx                     # トップページ
 ├── page.module.css
-├── not-found.tsx       　　　　　# 404ページ
+├── not-found.tsx                # 404ページ
 ├── not-found.module.css
 ├── globals.css
 └── favicon.ico
+
 ```
 </details>
 
