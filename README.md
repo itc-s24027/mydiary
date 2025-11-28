@@ -58,57 +58,58 @@ microCMSで日記を管理できる日記閲覧サイトです。
 
 ## ディレクトリ構成
 > ボタンや日記一覧ボードなど、複数のページで共通して使える UI 要素をコンポーネントとして切り出しています。これによりデザインを統一でき、各ページのコードもシンプルで読みやすくなりました。
-<details>
-<summary>コンポーネント</summary>
-
-Article：日記詳細ページで使う記事表示コンポーネント
-
-ButtonLink：リンクつきボタンコンポーネント
-
-CategoryButton：カテゴリー用の小ボタン
-
-CategoryListBoard：カテゴリーをまとめて表示するボード
-
-DiaryImage：日記ページで使う画像コンポーネント
-
-DiaryList：日記一覧表示コンポーネント
-
-Footer：フッター
-
-Header：ヘッダー
-
-Menu：スマホ用ハンバーガーメニュー
-
-Pagination：ページネーション
-
-SearchField：検索フォーム
-</details>
 
 
 <details>
-<summary>ページ構成</summary>
+<summary>ディレクトリ構成</summary>
 
-app/page.tsx
-— トップページ
-
-app/diary/page.tsx
-— 日記一覧ページ
-
-app/diary/[id]/page.tsx
-— 日記詳細ページ
-
-app/diary/category/page.tsx
-— カテゴリー一覧ページ
-
-app/diary/category/[id]/page.tsx
-— カテゴリー別日記一覧ページ
-
-app/diary/p/[current]/page.tsx 
-— ページネーションのページ
-
-app/diary/search/page.tsx
-— 検索結果ページ
-
+```
+app/
+├── _components/       　　　　　 # 再利用可能なUIコンポーネント群
+│   ├── Article/
+│   ├── ButtonLink/
+│   ├── CategoryButton/
+│   ├── CategoryListBoard/
+│   ├── DiaryImage/
+│   ├── DiaryList/
+│   ├── Footer/
+│   ├── Header/
+│   ├── Menu/
+│   ├── Pagination/
+│   └── SearchField/
+│
+├── _constants/
+│   └── index.ts                 # 定数（表示件数など）
+│
+├── _libs/
+│   ├── microcms.ts　　　　　　　# microCMS クライアント設定
+│   └── utils.ts　　　　　　　　 # 共通ユーティリティ
+│
+├── diary/
+│   ├── page.tsx        　　　　 # 日記一覧ページ
+│   ├── index.module.css
+│   ├── p/
+│   │   └── [current]/
+│   │       └── page.tsx　　　　# ページネーション
+│   ├── [id]/
+│   │   ├── page.module.css
+│   │   └── page.tsx　　　　　　# 詳細ページ
+│   ├── category/
+│   │   ├── page.tsx        　　# カテゴリー一覧ページ
+│   │   └── [id]/
+│   │       ├── page.module.css
+│   │       └── page.tsx　　　　# カテゴリー別日記一覧ページ
+│   └── search/         
+│       └── page.tsx　　　　　　 # 検索結果ページ
+│
+├── layout.tsx          　　　　　# 全ページ共通レイアウト
+├── page.tsx            　　　　　# トップページ
+├── page.module.css
+├── not-found.tsx       　　　　　# 404ページ
+├── not-found.module.css
+├── globals.css
+└── favicon.ico
+```
 </details>
 
 
