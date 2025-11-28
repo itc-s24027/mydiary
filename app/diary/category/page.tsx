@@ -1,5 +1,8 @@
 // カテゴリ一覧ページ
 // microCMSからカテゴリ一覧を取得
+
+export const dynamic = "force-dynamic";
+
 import { getCategoryList } from "@/app/_libs/microcms";
 import CategoryList from "@/app/_components/CategoryListBoard";
 

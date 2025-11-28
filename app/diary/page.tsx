@@ -1,4 +1,7 @@
 // 一覧ページ
+
+export const dynamic = "force-dynamic";
+
 import styles from "./page.module.css";
 import { getDiaryesList } from "@/app/_libs/microcms";
 import ButtonLink from "@/app/_components/ButtonLink";

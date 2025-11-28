@@ -1,4 +1,7 @@
 // 詳細ページ 
+
+export const dynamic = "force-dynamic";
+
 import Article from "@/app/_components/Article";
 import ButtonLink from "@/app/_components/ButtonLink";
 import styles from "./page.module.css";

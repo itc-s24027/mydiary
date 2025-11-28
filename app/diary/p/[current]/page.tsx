@@ -1,4 +1,7 @@
 // ページネーション用ページ
+
+// microCMSの内容を動的に取得するため
+// 日記更新し、デプロイ後に変更が反映されないことを防ぐ
 export const dynamic = "force-dynamic";
 
 import { notFound } from "next/navigation";

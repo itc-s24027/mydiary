@@ -21,7 +21,6 @@ export default function DiaryList({
     return (
       <>
     <p className={styles.noPosts}>日記の投稿がありません</p>
-    <ButtonLink href="/diary">日記一覧に戻る</ButtonLink>
     </>
   );
   }

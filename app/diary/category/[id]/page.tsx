@@ -1,4 +1,7 @@
 // カテゴリ別の日記一覧ページ
+
+export const dynamic = "force-dynamic";
+
 import styles from "./page.module.css";
 import { getDiaryesList} from "@/app/_libs/microcms";
 import { getCategoryList } from "@/app/_libs/microcms";

@@ -1,5 +1,6 @@
 // 詳細ページコンポーネント
 // [id]/page.tsx から渡されたデータを表示
+
 import styles from "./index.module.css"; 
 import Category from "@/app/_components/CategoryButton";
 import DiaryImage from "@/app/_components/DiaryImage";
