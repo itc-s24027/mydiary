@@ -12,18 +12,18 @@ microCMSで日記を管理できる日記閲覧サイトです。
 [サイトを見る👀](https://mydiary-umber.vercel.app/)
 
 ## スクリーンショット
-ホーム画面
-<img alt="ホーム画面" src="public/images/日記.png" width="500px"/>
+ホーム画面<br>
+<img alt="ホーム画面" src="public/images/日記.png" width="600px"/>
 
-カテゴリごとのページ
-<img alt="ホーム画面" src="public/images/カテゴリ.png" width="500px"/>
+カテゴリごとのページ<br>
+<img alt="ホーム画面" src="public/images/カテゴリ.png" width="600px"/>
 
-日記一覧をページネーションで表示
-<img alt="ホーム画面" src="public/images/ページネーション.png" width="500px"/>
+日記一覧をページネーションで表示<br>
+<img alt="ホーム画面" src="public/images/ページネーション.png" width="600px"/>
 
-日記詳細ページ
-<img alt="ホーム画面" src="public/images/詳細ページ1.png" width="500px"/>
-<img alt="ホーム画面" src="public/images/詳細ページ2.png" width="500px"/>
+日記詳細ページ<br>
+<img alt="ホーム画面" src="public/images/詳細ページ1.png" width="600px"/>
+<img alt="ホーム画面" src="public/images/詳細ページ2.png" width="600px"/>
 
 ## 機能
 - 日記の表示
